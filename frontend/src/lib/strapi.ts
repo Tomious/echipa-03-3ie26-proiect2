@@ -129,7 +129,7 @@ export const strapi = {
   async getCategory(slug: string) {
     const res = await request<StrapiResponse<Category[]>>("/categories", {
       "filters[slug][$eq]": slug,
-      "populate[articles][populate]": "*",
+      "populate": "*",
     });
     return res.data?.[0];
   },
