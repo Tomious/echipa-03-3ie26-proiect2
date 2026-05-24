@@ -8,7 +8,7 @@ import { Loader, ErrorState, EmptyState } from "@/components/States";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "StrapiBlog — Stories, ideas, and inspiration" },
+      { title: "NexaTech Solutions" },
       { name: "description", content: "Latest articles and categories from our Strapi-powered blog." },
     ],
   }),

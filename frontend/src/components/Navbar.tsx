@@ -47,13 +47,13 @@ export function Navbar() {
 
           {/* Articles Dropdown */}
           <li className="relative" ref={dropdownRef}>
-            <button
-              onClick={() => setDropdownOpen((o) => !o)}
-              className="flex items-center gap-1 text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
-            >
-              Articles
-              <ChevronDown className={`h-4 w-4 transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
-            </button>
+          <button
+            onClick={() => setDropdownOpen((o) => !o)}
+            className="flex items-center gap-1 text-sm font-medium text-foreground/80 transition-colors hover:text-primary leading-none p-0"
+          >
+            Articles
+            <ChevronDown className={`h-4 w-4 transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
+          </button>
             {dropdownOpen && (
               <div className="absolute top-full left-0 mt-2 w-48 rounded-xl border border-border bg-card shadow-lg">
                 <Link

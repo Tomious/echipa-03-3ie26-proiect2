@@ -56,7 +56,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "StrapiBlog — Stories, ideas, and inspiration" },
+      { title: "NexaTech Solutions" },
       { name: "description", content: "A modern blog powered by Strapi CMS and TanStack Start." },
     ],
   links: [
