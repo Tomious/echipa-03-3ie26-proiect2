@@ -16,7 +16,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         <Link to="/" className="text-lg font-bold tracking-tight">
-          <span className="text-primary">Strapi</span>Blog
+          <span className="text-primary">Nexa</span>Tech
         </Link>
         <ul className="hidden items-center gap-8 md:flex">
           {links.map((l) => (

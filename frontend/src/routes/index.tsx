@@ -25,26 +25,26 @@ function Home() {
       <section className="border-b border-border bg-gradient-to-b from-accent/40 to-background">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:py-28">
           <p className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">
-            Welcome to the blog
+            Echipa 03 • Agenție IT de Top
           </p>
           <h1 className="max-w-3xl text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
-            Stories, ideas, and inspiration — straight from our Strapi CMS.
+            Soluții IT pentru viitorul afacerii tale
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            Discover the latest articles across tech, food, nature and more.
+            NexaTech Solutions dezvoltă servicii și soluții digitale pentru companii care își doresc infrastructură sigură, aplicații moderne și un ecosistem tehnologic construit pentru eficiență, stabilitate și evoluție pe termen lung.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               to="/articles"
               className="rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90"
             >
-              Browse articles
+              Articole
             </Link>
             <Link
               to="/categories"
               className="rounded-md border border-border bg-card px-5 py-2.5 text-sm font-medium hover:bg-accent"
             >
-              Explore categories
+              Categorii
             </Link>
           </div>
         </div>
