@@ -82,7 +82,7 @@ function AboutPage() {
 
       {/* Hero */}
       <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Despre Noi</h1>
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-serif">Despre Noi</h1>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
           Echipa NexaTech Solutions – pasiune pentru tehnologie, dedicare pentru rezultate.
         </p>
