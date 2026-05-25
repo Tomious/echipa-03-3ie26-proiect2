@@ -5,7 +5,7 @@
 
 **`Cinade Mihai:`** text
 
-**`Toma Vlad-Ionut:`**  generare interfata cu lovable. Creare repo pe github. Configurare Strapi + Netlify. Configurare Collection Types (Categorii, Articole), pagina About (plus personalizare). Adaugare "Pages" in Collection Types, prin vs code. Creare si personalizare pagina Contact. Retusare Homepage, navbar/meniuri. Configurare footer. Adaugare theme Tailwind. Adaugare buton light/dark in navbar.
+**`Toma Vlad-Ionut:`** generare interfata cu lovable. Creare repo pe github. Configurare Strapi + Netlify. Configurare Collection Types (Categorii, Articole). Adaugare "Pages" in Collection Types, prin vs code. Retusare Homepage, navbar/meniuri. Configurare footer. Adaugare theme Tailwind. Adaugare buton light/dark in navbar.
 
 **`Ungureanu Cristian:`** text
 
