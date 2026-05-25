@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { strapi, strapiImage } from "@/lib/strapi";
 import { useAsync } from "@/hooks/useStrapi";
 import { SmartImage } from "@/components/SmartImage";
@@ -7,6 +8,14 @@ import { Loader, ErrorState } from "@/components/States";
 export const Route = createFileRoute("/articles/$slug")({
   component: ArticlePage,
 });
+
+// Sterge linia asta si adauga cod pagina FAQ
+
+// Sterge linia asta si adauga cod pagina Servicii
+
+// Sterge linia asta si adauga cod pagina Termeni&Conditii
+
+// Sterge linia asta si adauga cod Tehnologii
 
 function ArticlePage() {
   const { slug } = Route.useParams();
@@ -44,13 +53,29 @@ function ArticlePage() {
       <div className="mt-8 overflow-hidden rounded-xl">
         <SmartImage src={strapiImage(article.cover)} alt={article.title} />
       </div>
-      
-      {typeof article.content === "string" && (
-        <div className="prose prose-neutral mt-10 max-w-none whitespace-pre-wrap text-base leading-relaxed text-foreground/90">
-          {article.content}
+      {slug === "faq" ? (
+        <div className="mt-10">
+          <FAQContent />
         </div>
+      ) : slug === "servicii" ? (
+        <div className="mt-10">
+          <ServiciiContent />
+        </div>
+      ) : slug === "tehnologii" ? (
+        <div className="mt-10">
+          <TehnologiiContent />
+        </div>
+      ) : slug === "termeni-si-conditii" ? (
+        <div className="mt-10">
+          <TermeniContent />
+        </div>
+      ) : (
+        typeof article.content === "string" && (
+          <div className="prose prose-neutral mt-10 max-w-none whitespace-pre-wrap text-base leading-relaxed text-foreground/90">
+            {article.content}
+          </div>
+        )
       )}
-
       {Array.isArray(article.blocks) && article.blocks.length > 0 && (
         <div className="mt-10 space-y-6">
           {article.blocks.map((b, i) => {
