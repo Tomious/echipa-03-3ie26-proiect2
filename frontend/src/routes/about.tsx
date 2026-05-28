@@ -14,7 +14,7 @@ const teamMembers = [
   {
     name: "Mihai Cinade",
     role: "Creative Director & Full-Stack Developer",
-    image: "https://creative-bubble-5b1ffcc4aa.media.strapiapp.com/mihai_295f2f749e.jpg",
+    image: "https://creative-bubble-5b1ffcc4aa.media.strapiapp.com/mihai_a5a4a2f42a.jpg",
     bio: "Mihai coordonează direcția vizuală și tehnică a proiectelor noastre, asigurând o punte solidă între designul de interfață și arhitectura software.",
   },
   {
