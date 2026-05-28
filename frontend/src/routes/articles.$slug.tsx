@@ -9,9 +9,172 @@ export const Route = createFileRoute("/articles/$slug")({
   component: ArticlePage,
 });
 
-// Sterge linia asta si adauga cod pagina FAQ
+const faqItems = [
+  {
+	question: "Ce tipuri de servicii IT oferiți?",
+	answer: "Oferim servicii complete: dezvoltare aplicații web și mobile, securitate cibernetică, infrastructură IT, migrare și optimizare cloud, integrare API și consultanță tehnică. Echipa noastră construiește soluții personalizate pentru nevoi de business diverse.",
+  },
+  {
+	question: "Cum se desfășoară procesul de colaborare?",
+	answer: "Începem cu o întâlnire de consultanță gratuită, apoi analizăm cerințele și propunem soluția tehnică. Dezvoltarea este realizată Agile, cu sprinturi transparente, testare continuă și revizuiri regulate, urmată de lansare și suport post-live.",
+  },
+  {
+	question: "Cât durează de obicei un proiect de dezvoltare software?",
+	answer: "Durata depinde de complexitate. Un MVP poate fi livrat în 4-8 săptămâni, un proiect mid-size în 2-4 luni, iar soluțiile enterprise pot necesita 6-12 luni. Estimările exacte sunt oferite după evaluarea cerințelor și specificațiilor.",
+  },
+  {
+	question: "Ce tehnologii folosiți?",
+	answer: "Folosim soluții moderne: React, Next.js, Node.js, Python, .NET, AWS, Azure, Google Cloud, Docker și Kubernetes. Alegem tehnologia potrivită pentru obiectivele tale, astfel încât proiectul să fie performant, scalabil și ușor de întreținut.",
+  },
+  {
+	question: "Cum garantați securitatea datelor?",
+	answer: "Implementăm protocoale avansate de securitate, criptare SSL, autentificare multi-factor și controale de acces. Realizăm audituri de securitate și testări periodice pentru a preveni vulnerabilitățile și a asigura conformitatea cu standardele GDPR și NIS2.",
+  },
+  {
+	question: "Pot colabora cu voi pentru un proiect deja început?",
+	answer: "Da, putem prelua proiecte aflate în desfășurare. Facem o auditare rapidă a stadiului actual, identificăm blocajele și propunem un plan clar pentru finalizare, optimizare și livrare în condiții de calitate.",
+  },
+  {
+	question: "Oferiți soluții cloud și migrare?",
+	answer: "Da, oferim migrare cloud pentru AWS, Azure și Google Cloud, precum și configurații hibride. Ne ocupăm de arhitectura cloud, automatizarea DevOps și optimizarea costurilor pentru a obține performanță și stabilitate maxime.",
+  },
+  {
+	question: "Ce informații ar trebui să pregătesc pentru prima consultație?",
+	answer: "Pentru prima discuție, este util să pregătești o scurtă descriere a afacerii, obiectivele proiectului, publicul țintă și principalele probleme pe care vrei să le rezolvi. Dacă ai deja un buget orientativ sau un termen de livrare, această informație ne ajută să facem o estimare mai rapidă.",
+  },
+  {
+	question: "Cum funcționează procesul de revizii și modificări?",
+	answer: "Stabilim împreună un număr de revizii incluse în fazele de design și dezvoltare, iar cererile adiționale sunt estimate separat. Comunicarea transparentă și feedback-ul regulat sunt esențiale pentru a asigura că produsul final respectă așteptările tale.",
+  },
+  {
+	question: "Cine deține codul și documentația la finalul proiectului?",
+	answer: "După finalizare și plata proiectului, codul sursă, documentația și toate materialele livrate sunt transferate clientului. Ne asigurăm că primești tot ce este necesar pentru administrare, mentenanță și eventuală extindere ulterioară.",
+  },
+  {
+	question: "Ce garanții oferiți?",
+	answer: "Oferim garanție de 6 luni pentru bug-uri după lansare și documentație completă pentru soluțiile livrate. Toate proiectele includ transfer de cunoștințe și suport pentru integrarea echipei tale în noul sistem.",
+  },
+  {
+	question: "Oferiți consultanță gratuită?",
+	answer: "Da, prima consultație este gratuită. Discutăm despre obiectivele tale de business, evaluăm opțiunile tehnologice și îți oferim o primă direcție clară pentru proiect.",
+  },
+  {
+	question: "Care este intervalul de buget și ce factori influențează prețul?",
+	answer: "Bugetul depinde de funcționalități, complexitate, tehnologie și durata dezvoltării. Proiectele mici pornesc de la estimări accesibile, iar pentru soluțiile enterprise oferim oferte personalizate după analiza cerințelor și obiectivelor de business.",
+  },
+];
+ 
+function FAQContent() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+ 
+  return (
+	<div className="space-y-3">
+      {faqItems.map((item, i) => (
+    	<div key={i} className="rounded-xl border border-border bg-card overflow-hidden">
+          <button
+            onClick={() => setOpenIndex(openIndex === i ? null : i)}
+            className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-accent transition-colors"
+      	>
+            <span className="font-semibold">{item.question}</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className={`h-5 w-5 text-primary transition-transform flex-shrink-0 ml-4 ${openIndex === i ? "rotate-180" : ""}`}
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+              strokeLinecap="round" strokeLinejoin="round"
+        	>
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          {openIndex === i && (
+            <div className="px-6 pb-4 text-muted-foreground leading-relaxed">
+              {item.answer}
+            </div>
+      	)}
+        </div>
+  	))}
+	</div>
+  );
+}
 
-// Sterge linia asta si adauga cod pagina Servicii
+
+const serviciiItems = [
+  {
+	title: "Dezvoltare Aplicații Moderne",
+	description: "Transformăm viziunile de business în soluții software de înaltă performanță. Dezvoltăm aplicații web și mobile native, perfect scalabile, cu arhitecturi moderne și interfețe intuitive.",
+	features: ["Aplicații Web Enterprise", "Dezvoltare Mobile Nativă", "Platforme Software Custom", "UI/UX Design Avansat"],
+	icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>,
+  },
+  {
+	title: "Infrastructură IT Robustă",
+	description: "Proiectăm și implementăm arhitecturi hardware și de rețea reziliente, capabile să susțină operațiuni critice 24/7.",
+	features: ["Arhitectură de rețea scalabilă", "Configurare Servere Enterprise", "Soluții On-Premise & Hibride", "Disaster Recovery Planning"],
+	icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>,
+  },
+  {
+	title: "Securitate Cibernetică",
+	description: "Implementăm ecosisteme de securitate impenetrabile pentru a vă proteja activele digitale prin audituri riguroase și monitorizare proactivă.",
+	features: ["Audituri complexe de securitate", "Prevenirea atacurilor (IDS/IPS)", "Monitorizare și alertare 24/7", "Conformitate GDPR & NIS2"],
+	icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
+  },
+  {
+	title: "Ecosisteme Cloud & DevOps",
+	description: "Accelerăm inovația prin migrarea și optimizarea infrastructurii în medii cloud de top (AWS, Azure, GCP).",
+	features: ["Migrare și Arhitectură Cloud", "Containerizare (Docker, K8s)", "Pipelines CI/CD Automatizate", "Optimizarea costurilor cloud"],
+	icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>,
+  },
+  {
+	title: "Integrare Sisteme & API",
+	description: "Creăm un mediu IT omogen prin interconectarea aplicațiilor și sistemelor enterprise cu arhitecturi bazate pe microservicii.",
+	features: ["Dezvoltare API-uri REST/GraphQL", "Integrări ERP, CRM & Financiare", "Sincronizare bidirecțională de date", "Arhitecturi bazate pe Microservicii"],
+	icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>,
+  },
+  {
+	title: "Automatizare & Eficiență Digitală",
+	description: "Redefinim productivitatea prin digitalizarea și robotizarea proceselor de afaceri, eliminând sarcinile manuale redundante.",
+	features: ["Robotizarea Proceselor (RPA)", "Automatizarea fluxurilor de lucru", "Analiza și optimizarea proceselor", "Dezvoltare scripturi interne"],
+	icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
+  },
+  {
+	title: "Consultanță pentru Evoluție IT",
+	description: "Acționăm ca un partener strategic dedicat, oferind audituri tehnologice, planificare arhitecturală și strategii de transformare IT.",
+	features: ["Strategie de transformare digitală", "Audituri tehnologice complexe", "Optimizarea proceselor de afaceri", "Guvernanță IT și planificare bugete"],
+	icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>,
+  },
+  {
+	title: "Mentenanță & Stabilitate",
+	description: "Asigurăm continuitatea afacerii printr-un management IT proactiv, cu suport dedicat și monitorizare permanentă.",
+	features: ["Suport tehnic dedicat (Nivel 1-3)", "Monitorizare proactivă a sistemelor", "Mentenanță preventivă și SLA-uri", "Managementul actualizărilor IT"],
+	icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/></svg>,
+  },
+];
+ 
+function ServiciiContent() {
+  return (
+	<div className="grid gap-6 sm:grid-cols-2">
+      {serviciiItems.map((item) => (
+    	<div key={item.title} className="rounded-2xl border border-border bg-card p-6 space-y-4">
+          <div className="flex items-start gap-4">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary flex-shrink-0">
+              {item.icon}
+            </div>
+            <div>
+              <h3 className="font-bold text-lg">{item.title}</h3>
+              <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+            </div>
+          </div>
+      	<ul className="space-y-1">
+            {item.features.map((f) => (
+              <li key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                {f}
+              </li>
+        	))}
+          </ul>
+        </div>
+  	))}
+	</div>
+  );
+}
 
 const termeniSections = [
   {
