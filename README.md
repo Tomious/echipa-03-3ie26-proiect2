@@ -8,7 +8,7 @@
 
 **`Toma Vlad-Ionut:`** Am generat interfata cu lovable. Creat repo pe github. Configurat Strapi + Netlify. Configurat Collection Types (Categorii, Articole). Adaugat "Pages" in Collection Types, prin vs code. Retusat Homepage, navbar/meniuri. Configurat footer. Adaugat theme Tailwind. Adaugat buton light/dark in navbar. Plus coordonarea proiectului.
 
-**`Ungureanu Cristian:`** text
+**`Ungureanu Cristian:`** Am dezvoltat paginile FAQ și Servicii. Am organizat întrebările frecvente într-un format accordion interactiv și am structurat lista de servicii oferite, punând accent pe claritatea informațiilor și pe o experiență de utilizare cât mai accesibilă.
 
 ## Sursa/model de inspiratie 
 Site-urile realizate la tema 1 si proiectul 1
